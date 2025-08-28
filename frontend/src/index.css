@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+}
+.container { display:flex; justify-content:center; align-items:center; height:100vh; gap:40px; }
+.card { background-color:#fff; padding:32px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:380px; text-align:center; }
+h2 { font-size:24px; font-weight:bold; margin-bottom:20px; }
+form { display:flex; flex-direction:column; gap:16px; }
+input { padding:12px; border-radius:8px; border:1px solid #ccc; font-size:16px; }
+input:focus { outline:none; border-color:#3b82f6; box-shadow:0 0 0 2px rgba(59,130,246,0.3);}
+button { padding:12px; font-size:16px; border-radius:8px; border:none; cursor:pointer; transition:0.3s; }
+button.login { background-color:#3b82f6; color:white; }
+button.login:hover { background-color:#2563eb; }
+button.register { background-color:#10b981; color:white; }
+button.register:hover { background-color:#059669; }
+.error-msg { color:red; font-size:14px; margin-top:10px; }
+.dashboard-container { padding:32px; min-height:100vh; background-color:#f3f4f6; }
+.dashboard-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; }
+.dashboard-header h2 { font-size:28px; }
+.dashboard-header button { background-color:#ef4444; color:white; padding:10px 16px; border-radius:8px; }
+.dashboard-header button:hover { background-color:#dc2626; }
+table { width:100%; border-collapse:collapse; background-color:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+thead { background-color:#e5e7eb; }
+th, td { padding:12px 16px; text-align:left; border-bottom:1px solid #ddd; }
+tr:hover { background-color:#f9fafb; }
+td button { background-color:#ef4444; color:white; padding:6px 12px; border-radius:6px; }
+td button:hover { background-color:#dc2626; }

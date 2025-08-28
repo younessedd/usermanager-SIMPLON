@@ -1,0 +1,170 @@
+:root{
+  --bg:#0f172a;          /* خلفية داكنة أنيقة */
+  --card:#111827;
+  --muted:#64748b;
+  --text:#e5e7eb;
+  --primary:#6366f1;
+  --primary-2:#4f46e5;
+  --danger:#ef4444;
+  --success:#10b981;
+  --border:#1f2937;
+}
+
+*{ box-sizing:border-box; }
+html,body,#root{ height:100%; }
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(99,102,241,.25), transparent),
+              radial-gradient(800px 400px at 90% 10%, rgba(16,185,129,.15), transparent),
+              var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+a{ color:var(--primary); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+/* Auth */
+.auth-wrapper{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+.card{
+  width:100%;
+  max-width:460px;
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+  border:1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius:16px;
+  padding:24px;
+  box-shadow: 0 10px 50px rgba(0,0,0,.35);
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  background:#0b1220;
+  border:1px solid var(--border);
+  padding:6px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
+.tab{
+  flex:1;
+  background:transparent;
+  color:var(--muted);
+  border:none;
+  padding:10px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+.tab.active{
+  color:var(--text);
+  background:#0f172a;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.form{ display:grid; gap:14px; }
+.field label{ display:block; font-size:14px; color:var(--muted); margin-bottom:6px; }
+.field input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:#0b1220;
+  color:var(--text);
+  outline:none;
+}
+.field input:focus{ border-color:var(--primary); }
+
+.password-wrap{
+  position:relative;
+}
+.password-wrap input{ padding-right:82px; }
+.password-wrap .toggle{
+  position:absolute;
+  right:6px; top:6px; bottom:6px;
+  min-width:70px;
+  border:none; border-radius:8px;
+  background:#0f172a;
+  color:var(--muted);
+  cursor:pointer; font-weight:600;
+}
+.password-wrap .toggle:hover{ color:var(--text); }
+
+.primary, .secondary, .danger{
+  padding:12px 14px;
+  border:none; border-radius:10px;
+  font-weight:700; cursor:pointer;
+}
+.primary{
+  background:linear-gradient(180deg, var(--primary), var(--primary-2));
+  color:white;
+}
+.primary:hover{ filter:brightness(1.05); }
+.secondary{
+  background:#0b1220; color:var(--text); border:1px solid var(--border);
+}
+.secondary:hover{ border-color:var(--primary); }
+.danger{
+  background: linear-gradient(180deg, #f87171, #ef4444);
+  color:white;
+}
+.danger:hover{ filter:brightness(1.05); }
+
+.error{
+  border:1px solid rgba(239,68,68,.6);
+  background: rgba(239,68,68,.08);
+  color:#fecaca;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:14px;
+}
+.success{
+  border:1px solid rgba(16,185,129,.5);
+  background: rgba(16,185,129,.08);
+  color:#befae3;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:14px;
+}
+
+/* Dashboard */
+.page{ max-width:1000px; margin:36px auto; padding:0 16px; }
+.topbar{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:16px;
+}
+.table-wrap{ overflow:auto; border:1px solid var(--border); border-radius:12px; }
+table{ width:100%; border-collapse:collapse; min-width:700px; }
+thead th{
+  background:#0b1220; color:#cbd5e1; text-align:left; padding:12px; font-weight:700;
+}
+tbody td{ padding:12px; border-top:1px solid var(--border); }
+
+/* Cards for mobile */
+.cards-wrap { display: none; } /* اخفاء على سطح المكتب */
+
+@media (max-width: 768px) {
+  .table-wrap { display: none; } /* اخفاء الجدول على الهاتف */
+  .cards-wrap { display: grid; gap: 12px; }
+
+  .user-card {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  }
+  .user-card h3 { margin:0 0 6px 0; font-size:18px; }
+  .user-card p { margin: 4px 0; font-size:14px; }
+  .user-card button { margin-top:8px; width:100%; }
+}
+
+/* Welcome */
+.welcome{
+  min-height:100dvh; display:grid; place-items:center; padding:24px;
+}
+.welcome .card{ text-align:center; }
